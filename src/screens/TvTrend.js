@@ -3,10 +3,7 @@ import {StyleSheet, TouchableHighlight} from "react-native";
 import {GridRow, Screen, NavigationBar, ListView, TouchableOpacity, ImageBackground, Tile, Title, Subtitle, Divider, Card, Image, View, Caption, Text, Spinner, Heading} from '@shoutem/ui';
 import api from '../services/api';
 
-import { HeaderNavigationBar } from '../components/menu/HeaderNavigationBar';
-
-
-export default class Home extends Component {
+export default class TvTrend extends Component {
     constructor(props) {
         super(props);
         this.renderRow = this.renderRow.bind(this);
@@ -19,6 +16,7 @@ export default class Home extends Component {
     componentDidMount(){
         this.loadFilms();
     }
+    
     state = {
         results: [],
         page:1,
@@ -26,7 +24,7 @@ export default class Home extends Component {
     }
 
     loadFilms = async (page = 1) => {
-        const response = await api.get(`/trending/movie/day?api_key=7de1111e4ea9fa0dc45893f3c81297b3&language=en-US&page=${page}`);
+        const response = await api.get(`/trending/tv/day?api_key=7de1111e4ea9fa0dc45893f3c81297b3&language=pt-BR&page=${page}`);
         const {results,  ...filmInfo} = response.data;
         this.setState({
             results: [... this.state.results, ...results],
@@ -52,7 +50,6 @@ export default class Home extends Component {
             <TouchableOpacity
                 onPress={() =>  {this.props.navigation.navigate('FilmDetail', {
                     filmID: rowData[0].id,
-                    filmTitle: rowData[0].title
                 })}}
                 key={index}
             >
@@ -61,7 +58,7 @@ export default class Home extends Component {
                 source={{uri: `http://image.tmdb.org/t/p/w500/${rowData[0].backdrop_path}`}}
                 >
                 <Tile>
-                    <Title styleName="md-gutter-bottom">{rowData[0].title}</Title>
+                    <Title styleName="md-gutter-bottom">{rowData[0].name}</Title>
                 </Tile>
                 </ImageBackground>
                 <Divider styleName="line" />
@@ -74,7 +71,6 @@ export default class Home extends Component {
                 <TouchableOpacity
                 onPress={() =>  {this.props.navigation.navigate('FilmDetail', {
                     filmID: item.id,
-                    filmTitle: item.title
                 })}}
                     key={id}
                     styleName="flexible"
@@ -85,7 +81,7 @@ export default class Home extends Component {
                             source={{uri: `http://image.tmdb.org/t/p/w500/${item.backdrop_path}`}}
                         />
                         <View styleName="content">
-                            <Subtitle numberOfLines={3}>{item.title}</Subtitle>
+                            <Subtitle numberOfLines={3}>{item.name}</Subtitle>
                         </View>
                     </Card>
                 </TouchableOpacity>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import { HeaderNavigationBar } from '../components/menu/HeaderNavigationBar';
 
-export class InfoScreen extends Component {
+export default class Info extends Component {
 
     render() {
         return (<View style={{

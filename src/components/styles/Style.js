@@ -27,4 +27,38 @@ module.exports = StyleSheet.create({
         backgroundColor: PRIMARY_COLOR
     },
 
+    paddingTop20: {
+        paddingTop: 20
+    },
+
+    paddingLeft20: {
+        paddingLeft: 20
+    },
+
+    paddingBottom20: {
+        paddingBottom: 20
+    },
+
+    paddingTop30: {
+        paddingTop: 30
+    },
+
+    textPaddingSide: {
+        paddingLeft: 20,
+        paddingRight: 20,
+    },
+
+    textPaddingTitle: {
+        paddingTop: 10,
+        paddingBottom: 0,
+        paddingLeft: 20,
+        paddingLeft: 20
+    },
+
+    textPaddingCaption: {
+        paddingBottom: 20,
+        paddingLeft: 20,
+        paddingRight: 20
+    }
+
 });
