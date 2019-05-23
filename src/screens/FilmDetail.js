@@ -15,7 +15,7 @@ export default class FilmDetail extends Component {
     constructor(props){
         super(props);
         this.state = { }
-   }
+    }
 
     convertToDolar = value => {
         return (
@@ -68,7 +68,7 @@ export default class FilmDetail extends Component {
                     : {uri: `http://www.globeinst.org/dev/wp-content/uploads/2016/06/people-placeholder-320x303.png`}}
                 />
                 <Text styleName="h-center">{item.name}</Text>
-                <Caption styleName="h-center">{item.character}</Caption>
+                <Caption styleName="h-center">{item.character ? item.character : item.job}</Caption>
             </View>
         );
     }
@@ -113,7 +113,7 @@ export default class FilmDetail extends Component {
                     </Text>
 
                     <View style={Style.textPaddingTitle}>
-                        <Subtitle>Running Time: <Text>{this.state.runtime || ''}mins</Text></Subtitle>
+                        <Subtitle>Running Time: <Text>{this.state.runtime || ''} mins</Text></Subtitle>
                     </View>
 
                     <View style={Style.textPaddingTitle}>

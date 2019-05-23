@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {StyleSheet, TouchableHighlight} from "react-native";
-import {GridRow, Screen, NavigationBar, ListView, TouchableOpacity, ImageBackground, Tile, Title, Subtitle, Divider, Card, Image, View, Caption, Text, Spinner, Heading} from '@shoutem/ui';
+import {GridRow, Screen, NavigationBar, ListView, TouchableOpacity, ImageBackground, Tile, Title, Subtitle, Divider, Card, Image, View, Caption, Text, Spinner, Heading, Button} from '@shoutem/ui';
 import api from '../services/api';
 
 import { HeaderNavigationBar } from '../components/menu/HeaderNavigationBar';
@@ -12,17 +12,13 @@ export default class Home extends Component {
         this.renderRow = this.renderRow.bind(this);
     }
 
-    static navigationOptions = {
-      header: null
-    }
-
     componentDidMount(){
         this.loadFilms();
     }
+
     state = {
         results: [],
         page:1,
-
     }
 
     loadFilms = async (page = 1) => {
@@ -116,7 +112,6 @@ export default class Home extends Component {
     
         return (
             <Screen>
-                {/* <HeaderNavigationBar {...this.props} /> */}
                 <ListView
                     data={groupedData}
                     renderRow={this.renderRow}
