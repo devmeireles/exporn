@@ -3401,11 +3401,6 @@ fbjs@0.8.17, fbjs@^0.8.0, fbjs@^0.8.4, fbjs@^0.8.9, fbjs@~0.8.9:
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.18"
 
-feather-icons-react@^0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/feather-icons-react/-/feather-icons-react-0.3.2.tgz#fd8f25a0f1b7fc10678839fe5eb2b61be4f92d60"
-  integrity sha512-nob+VhAw9LsTtJqZMDRMCUWTaTiRlIUiwnu9fekuykx9pKLLVb5ZWjPR9wdkFtTYm0lDu3Z2oNJCMhOqKec+QA==
-
 figures@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/figures/-/figures-2.0.0.tgz#3ab1a2d2a62c8bfb431a0c94cb797a2fce27c962"
@@ -5888,6 +5883,11 @@ react-native-lightbox@shoutem/react-native-lightbox#v0.7.2:
     react-native-view-transformer shoutem/react-native-view-transformer#v0.0.29
     react-timer-mixin "^0.13.3"
 
+react-native-linear-gradient@^2.5.4:
+  version "2.5.4"
+  resolved "https://registry.yarnpkg.com/react-native-linear-gradient/-/react-native-linear-gradient-2.5.4.tgz#dce133526f5a5510a639af94544f1ed0c984bd1e"
+  integrity sha512-FF1NhlerA4uBiS0gFIHa4FBp8/aftv4vPj14Y47lGNkYjSI94tnI6oYO3EfUxXjEyCUPiOVNKZOB9kScyjc5Ew==
+
 react-native-linear-gradient@~2.4.0:
   version "2.4.4"
   resolved "https://registry.yarnpkg.com/react-native-linear-gradient/-/react-native-linear-gradient-2.4.4.tgz#64944a39290eefbede18dfd7e9551f1ef61e3de7"
@@ -5958,6 +5958,10 @@ react-native-scroller@0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/react-native-scroller/-/react-native-scroller-0.0.6.tgz#dea8c89bd1ca2d2445fbb6b3a90960df6c1767ff"
   integrity sha1-3qjIm9HKLSRF+7azqQlg32wXZ/8=
+
+"react-native-shimmer-placeholder@https://github.com/tomzaku/react-native-shimmer-placeholder.git#expo":
+  version "1.0.31"
+  resolved "https://github.com/tomzaku/react-native-shimmer-placeholder.git#1372b1509f70e622a56837d11ee795aed7797d1e"
 
 react-native-snap-carousel@^3.8.0:
   version "3.8.0"

@@ -5,8 +5,7 @@ import Home from './screens/Home';
 import FilmDetail from './screens/FilmDetail';
 import { NavigationActions } from 'react-navigation';
 import TvTrend from './screens/TvTrend';
-import Info from './screens/Info';
-import Profile from './screens/Profile';
+import PeopleDetail from './screens/PeopleDetail';
 
 const MenuButton = (props) => {
   if(!props.navigation.state.isDrawerOpen){
@@ -56,33 +55,13 @@ const DrawerNavigator = createDrawerNavigator({
   } 
 );
 
-const TabNavigator = createBottomTabNavigator({
-  FilmDetail: {
-    screen: FilmDetail,
-    navigationOptions: ({navigation}) => ({
-      title: 'Details',
-      tabBarIcon: ({ tintColor }) => (
-        <Icon name="md-list" size={20}/>
-      )
-    })
-  },
-  Videos: {
-    screen: Profile,
-    navigationOptions: ({navigation}) => ({
-      title: 'Videos',
-      tabBarIcon: ({ tintColor }) => (
-        <Icon name="md-play" size={20}/>
-      )
-    })
-  },
-});
-
 
 const Routes = createAppContainer(
   createStackNavigator({
     DrawerNavigator: DrawerNavigator,
     Home: Home,
-    TabNavigator: TabNavigator
+    FilmDetail: FilmDetail,
+    PeopleDetail: PeopleDetail,
   })
 );
 

@@ -1,7 +1,5 @@
 import React from 'react';
 import { Font, AppLoading } from 'expo';
-import { View, Text } from '@shoutem/ui';
-import { HomeScreen } from './src/screens/Home';
 import MainApp from './src';
 
 class App extends React.Component {
