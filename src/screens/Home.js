@@ -48,7 +48,8 @@ export default class Home extends Component {
             <TouchableOpacity
                 onPress={() =>  {this.props.navigation.navigate('FilmDetail', {
                     filmID: rowData[0].id,
-                    filmTitle: rowData[0].title
+                    filmTitle: rowData[0].title,
+                    mediaType: 'movie'
                 })}}
                 key={index}
             >
@@ -70,7 +71,8 @@ export default class Home extends Component {
                 <TouchableOpacity
                 onPress={() =>  {this.props.navigation.navigate('FilmDetail', {
                     filmID: item.id,
-                    filmTitle: item.title
+                    filmTitle: item.title,
+                    mediaType: 'movie'
                 })}}
                     key={id}
                     styleName="flexible"

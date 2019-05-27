@@ -68,7 +68,8 @@ export default class PeopleDetail extends Component {
                         routeName: 'FilmDetail',
                         params: {
                             filmID: item.id,
-                            filmTitle: item.name
+                            filmTitle: item.name,
+                            mediaType: 'movie'
                         }
                     }
                 )
@@ -87,6 +88,11 @@ export default class PeopleDetail extends Component {
                 />
                 <Subtitle styleName="h-center">{item.title}</Subtitle>
                 <Text styleName="h-center">{item.character}</Text>
+                {
+                    item.release_date
+                    ? <Text styleName="h-center">{item.release_date.substring(0, 4)}</Text>
+                    : null
+                }
             </TouchableOpacity>
         );
     }
@@ -101,7 +107,8 @@ export default class PeopleDetail extends Component {
                         routeName: 'FilmDetail',
                         params: {
                             filmID: item.id,
-                            filmTitle: item.name
+                            filmTitle: item.name,
+                            mediaType: 'movie'
                         }
                     }
                 )
@@ -120,6 +127,11 @@ export default class PeopleDetail extends Component {
                 />
                 <Subtitle styleName="h-center">{item.title}</Subtitle>
                 <Text styleName="h-center">{item.department}</Text>
+                {
+                    item.release_date
+                    ? <Text styleName="h-center">{item.release_date.substring(0, 4)}</Text>
+                    : null
+                }
             </TouchableOpacity>
         );
     }
