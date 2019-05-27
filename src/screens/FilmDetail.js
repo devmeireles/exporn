@@ -33,6 +33,8 @@ export default class FilmDetail extends Component {
         this.loadFilm();
         this.loadCast();
         this.loadVideos();
+
+        console.log(this.props.navigation.state.params.filmID);
     }
 
     loadFilm = async () => {

@@ -5,6 +5,9 @@ import Icon from "react-native-vector-icons/Ionicons";
 import api from '../services/api';
 import Carousel from 'react-native-snap-carousel';
 
+import { StackActions, NavigationActions } from 'react-navigation';
+
+
 const Style = require('../components/styles/Style');
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
@@ -56,13 +59,26 @@ export default class PeopleDetail extends Component {
     }
 
     renderCast ({item, index}) {
+        const resetAction = StackActions.reset({
+            index: 1,
+            actions: [
+                NavigationActions.navigate({ routeName: 'Home' }),
+                NavigationActions.navigate(
+                    {
+                        routeName: 'FilmDetail',
+                        params: {
+                            filmID: item.id,
+                            filmTitle: item.name
+                        }
+                    }
+                )
+            ],
+          });
+          
         return (
             <TouchableOpacity
                 style={{justifyContent: 'center', alignItems: 'center'}}
-                onPress={() =>  {this.props.navigation.navigate('FilmDetail', {
-                    filmdID: item.id,
-                    filmName: item.name
-                })}}
+                onPress={ () => {this.props.navigation.dispatch(resetAction);}}
                 key={index}
             >
                 <Image
@@ -76,13 +92,26 @@ export default class PeopleDetail extends Component {
     }
 
     renderCrew ({item, index}) {
+        const resetAction = StackActions.reset({
+            index: 1,
+            actions: [
+                NavigationActions.navigate({ routeName: 'Home' }),
+                NavigationActions.navigate(
+                    {
+                        routeName: 'FilmDetail',
+                        params: {
+                            filmID: item.id,
+                            filmTitle: item.name
+                        }
+                    }
+                )
+            ],
+          });
+
         return (
             <TouchableOpacity
                 style={{justifyContent: 'center', alignItems: 'center'}}
-                onPress={() =>  {this.props.navigation.navigate('FilmDetail', {
-                    filmdID: item.id,
-                    filmName: item.name
-                })}}
+                onPress={ () => {this.props.navigation.dispatch(resetAction);}}
                 key={index}
             >
                 <Image
